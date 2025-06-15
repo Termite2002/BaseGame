@@ -44,10 +44,6 @@ namespace Termite.BaseGame
             GetDictionary.Clear();
         }
 
-        protected void Test()
-        {
-            Debug.Log(111);
-        }
 
         protected void SingleClearFind()
         {
