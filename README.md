@@ -1,6 +1,6 @@
 # 🧩 Nguyen Base Game
 
-A modular and reusable base game framework for Unity, designed to bootstrap core systems like item merging, level configuration, and sticker collection. This package serves as a **foundation** for building mobile puzzle and merge games rapidly across multiple projects.
+Nguyen Base Game is a modular and reusable Unity package designed to serve as a foundational framework for game development. It includes ready-to-use systems such as save/load management, core MonoBehaviour structure, event broadcasting, sound control, object pooling, and various utilities. Ideal for quickly bootstrapping new Unity projects, especially mobile, puzzle, or casual games.
 
 ---
 
