@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Termite.BaseGame
 {
     public class _BaseBehaviour : BaseBehaviour
     {
-
-
         public virtual void SetActive(bool isActive)
         {
             gameObject.SetActive(isActive);
