@@ -10,6 +10,7 @@ namespace Termite.BaseGame
         private static readonly Dictionary<Type, object> FindDictionary = new Dictionary<Type, object>();
         private readonly Dictionary<Type, object> GetDictionary = new Dictionary<Type, object>();
         private readonly Dictionary<Type, object> GetChildDictionary = new Dictionary<Type, object>();
+        private readonly Dictionary<string, object> CreateIfNotExistDictionary = new Dictionary<string, object>();
 
         protected static T SingleFind<T>() where T : Object
         {
@@ -48,6 +49,66 @@ namespace Termite.BaseGame
         protected void SingleClearFind()
         {
             FindDictionary.Clear();
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        protected T SingleCreateIfNotExist<T>(string customName, Func<T> createFunc)
+        {
+            return SingleCreateIfNotExist(createFunc, customName);
+        }
+
+        protected T SingleCreateIfNotExist<T>(Func<T> createFunc, string customName = null)
+        {
+            var dictKey = typeof(T).ToString();
+            if (!string.IsNullOrEmpty(customName)) dictKey = customName;
+            if (!CreateIfNotExistDictionary.ContainsKey(dictKey)) CreateIfNotExistDictionary[dictKey] = createFunc();
+            return (T)CreateIfNotExistDictionary[dictKey];
+        }
+
+        public void SetSingleCreateIfNotExist<T>(T obj, string customName = null)
+        {
+            var dictKey = typeof(T).ToString();
+            if (!string.IsNullOrEmpty(customName)) dictKey = customName;
+            CreateIfNotExistDictionary[dictKey] = obj;
+        }
+
+        public T GetSingleCreate<T>(string customName = null) where T : Object
+        {
+            var dictKey = typeof(T).ToString();
+            if (!string.IsNullOrEmpty(customName)) dictKey = customName;
+            if (CreateIfNotExistDictionary.TryGetValue(dictKey, out var obj))
+            {
+                return (T)obj;
+            }
+            return null;
+        }
+
+        protected void SingleClear<T>()
+        {
+            var type = typeof(T);
+            var typeStr = type.ToString();
+            if (CreateIfNotExistDictionary.ContainsKey(typeStr))
+            {
+                CreateIfNotExistDictionary.Remove(typeStr);
+            }
+            if (FindDictionary.ContainsKey(type))
+            {
+                FindDictionary.Remove(type);
+            }
+        }
+
+        protected void SingleClear(string customName)
+        {
+            if (CreateIfNotExistDictionary.ContainsKey(customName))
+            {
+                CreateIfNotExistDictionary.Remove(customName);
+            }
+        }
+
+        protected void SingleClearCreateIfNotExist()
+        {
+            CreateIfNotExistDictionary.Clear();
         }
     }
 }
