@@ -1,17 +1,21 @@
 {
-    "name": "com.nguyen.basegame",
-    "version": "1.0.1",
-    "displayName": "Base Game",
-    "description": "Easy to start a unity project",
-    "author": {
-        "name": "Nguyen Pham",
-        "email": "motsach1732002@gmail.com"
-    },
-    "keywords": [
-        "unity",
-        "toolkit",
-        "example",
-        "sample"
-    ],
-    "type": "library"
+  "name": "com.nguyen.basegame",
+  "version": "1.0.1",
+  "displayName": "Base Game",
+  "description": "Easy to start a unity project",
+  "author": {
+    "name": "Nguyen Pham",
+    "email": "motsach1732002@gmail.com"
+  },
+  "keywords": [
+    "unity",
+    "toolkit",
+    "example",
+    "sample"
+  ],
+  "type": "library",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.2.1"
+  }
+
 }

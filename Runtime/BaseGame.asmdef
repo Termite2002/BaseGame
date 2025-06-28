@@ -1,16 +1,25 @@
 {
     "name": "BaseGame",
     "rootNamespace": "Termite.BaseGame",
-    "references": [],
+    "references": [
+        "DOTween.Modules",
+        "DOTweenPro.EditorScripts",
+        "PlayerPrefsEditor",
+        "PlayerPrefsEditor.Editor"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [
-        "DOTween"
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "DOTweenPro.dll",
+        "DOTween.dll",
+        "DOTweenEditor.dll",
+        "DOTweenProEditor.dll",
+        "Newtonsoft.Json.dll"
     ],
+    "autoReferenced": true,
+    "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false
 }
