@@ -4,6 +4,14 @@ namespace Termite.BaseGame
 {
     public class _BaseBehaviour : BaseBehaviour
     {
+        protected static ServicesController Services => Controllers.Get<ServicesController>();
+
+        protected static DataController DataController => Controllers.Get<DataController>();
+
+        protected static SoundController SoundController => Controllers.Get<SoundController>();
+
+
+
         public virtual void SetActive(bool isActive)
         {
             gameObject.SetActive(isActive);
