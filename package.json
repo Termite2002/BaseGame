@@ -15,8 +15,6 @@
   ],
   "type": "library",
   "dependencies": {
-    "com.unity.nuget.newtonsoft-json": "3.2.1",
-    "com.sabresaurus.playerprefseditor": "https://github.com/sabresaurus/PlayerPrefsEditor.git"
   }
 
 }
